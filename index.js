@@ -12,9 +12,14 @@ const tutorials = [
 ];
 
 
-function titleCased(tutorial){
-  return tutorials.map(tutorial=>{
-  return tutorial.split(" ").map((word)=> {
-    return word[0].toUpperCase() + word.slice(1);
-  }).join(" ");
-  });}
+// function titleCased(tutorial){
+//   return tutorials.map(tutorial=>{
+//   return tutorial.split(" ").map((word)=> {
+//     return word[0].toUpperCase() + word.slice(1);
+//   }).join(" ");
+//   });}
+const titleCased = () => {
+  return tutorials.map(tutorial => {
+    return tutorial.replace(/\b\w/g, match => match.toUpperCase());
+  });
+};
